@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelvin Kasalu | Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dark-theme">
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo">
+                Kelvin Kasalu
+                <div class="navbar-subtitle visible" id="navbar-subtitle">Full Stack Dev. | Class of 2025</div>
+            </div>
+            <ul class="navbar-links">
+                <li><a href="#about"> <span>👤</span> About</a></li>
+                <li><a href="#skills"> <span>⚡</span> Skills</a></li>
+                <li><a href="#projects"> <span>🚀</span> Projects</a></li>
+                <li><a href="#contact"> <span>📧</span> Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Resume <span>✨</span></a>
+                    <div class="dropdown-content">
+                        <a href="{{ url_for('static', filename='resume.pdf') }}" download>Download PDF</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Hey there! I'm <span class="highlight">Kelvin Kasalu</span></h1>
+                <p class="subtitle">A tech enthusiast with a passion for building secure systems and solving real-world problems through code <span>🔒</span><br>
+                Building digital experiences that are both beautiful <em>and</em> bulletproof <span>✨</span></p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="cta-primary">Check Out My Work</a>
+                    <a href="#contact" class="cta-secondary">Let's Connect</a>
+                </div>
+            </div>
+        </section>
+        <!-- Scrollable About Section -->
+        <section id="about" class="about-flip-content about-scroll-section">
+            <div class="about-photo">
+                <img src="{{ url_for('static', filename='assets/Photo.jpg') }}" alt="Kelvin Kasalu Photo" />
+            </div>
+            <div class="about-info">
+                <h2>About Me</h2>
+                <p>Hello! I'm Kelvin Kasalu, a passionate Full-Stack Developer with a love for cybersecurity and building bulletproof digital experiences. I enjoy working on projects that are both beautiful and secure.</p>
+                <p>It all started when I fixed my mom's laptop and she called me a 'genius' — I've been riding that high ever since. What began as curiosity turned into a full-blown passion for tech. These days, I mix classroom theory with hands-on experience to build secure systems and keep data exactly where it belongs (spoiler: not in the wrong hands).</p>
+                <!--<ul>
+                    <li>🌍 Based in: [Your Location]</li>
+                    <li>💻 Main Skills: Python, JavaScript, PHP, Cybersecurity</li>
+                    <li>🎓 Education: [Your Education]</li>
+                    <li>📧 Contact: [Your Email]</li>
+                </ul>-->
+                <hr style="margin:2em 0; border:0; border-top:1.5px solid #23263a;">
+                <div class="professional-journey-container" style="background:#20233a;border-radius:1.1em;padding:1.5em 1.2em 1.2em 1.2em;margin-bottom:2em;box-shadow:0 2px 16px 0 rgba(91,107,255,0.08);">
+                    <h3 style="font-size:1.25rem;font-weight:800;margin-bottom:0.7em;color:#7f53ff;letter-spacing:0.01em;">The Professional Journey So Far</h3>
+                    <div class="professional-journey">
+                        <div style="margin-bottom:1.2em;">
+                            <strong style="color:#43e97b;font-size:1.08rem;">Industrial Attachment – Kenya National Bureau of Statistics (8 Jan – 6 Apr 2024)</strong>
+                            <ul style="margin-top:0.7em; margin-bottom:1.2em; padding-left:1.5em; list-style: disc;">
+                                <li>Assisted in data collection, cleaning, and validation for national surveys and censuses.</li>
+                                <li>Developed scripts for automating repetitive data processing tasks.</li>
+                                <li>Supported the IT team in maintaining and updating internal databases.</li>
+                                <li>Participated in the preparation of statistical reports and presentations.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong style="color:#4fc3f7;font-size:1.08rem;">Intern – Strathmore University (June 2024 – Present)</strong>
+                            <ul style="margin-top:0.7em; margin-bottom:1.2em; padding-left:1.5em; list-style: disc;">
+                                <li>Contributing to web application development and maintenance for university systems.</li>
+                                <li>Collaborating with faculty and IT staff on digital transformation projects.</li>
+                                <li>Providing technical support and training to staff and students.</li>
+                                <li>Continuously learning and applying new technologies in real-world scenarios.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Placeholder sections for Skills, Projects, Contact -->
+        <section id="skills">
+            <h2 style="text-align:center;display:block;width:100%;font-size:2.2rem;font-weight:800;margin-bottom:1.5rem;">Skills & Certifications</h2>
+            <p class="skills-intro">A blend of technical expertise and security know-how. Here are some of the tools and technologies I work with as well as the badges I have earned:</p>
+            <!-- Tab Button Group -->
+            <div class="tab-buttons">
+                <button class="tab-btn active" id="skills-tab" onclick="showTab('skills')">Skills Arsenal <span>🎯</span></button>
+                <button class="tab-btn" id="certs-tab" onclick="showTab('certs')">Certified Badges <span>🏆</span></button>
+            </div>
+            <!-- Skills Container (default visible) -->
+            <div class="skills-container" id="skills-container">
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i class="fab fa-python skill-icon"></i>
+                        <div class="skill-title">Python</div>
+                        <div class="skill-desc">
+                            <ul style="padding-left:1.2em;margin:0;">
+                                <li>Versatile scripting and backend development</li>
+                                <li>Data analysis, automation, and web scraping</li>
+                                <li>Flask/Django web apps and REST APIs</li>
+                                <li>Experience with data science libraries (Pandas, NumPy)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-lock skill-icon"></i>
+                        <div class="skill-title">Cybersecurity</div>
+                        <div class="skill-desc">
+                            <ul style="padding-left:1.2em;margin:0;">
+                                <li>Implementing secure systems and best practices</li>
+                                <li>Ethical hacking and penetration testing</li>
+                                <li>Data protection and encryption</li>
+                                <li>Vulnerability assessment and risk management</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fab fa-js-square skill-icon"></i>
+                        <div class="skill-title">JavaScript</div>
+                        <div class="skill-desc">
+                            <ul style="padding-left:1.2em;margin:0;">
+                                <li>Dynamic web interfaces and client-side scripting</li>
+                                <li>Interactive UI/UX with modern frameworks</li>
+                                <li>Asynchronous programming (AJAX, Fetch API)</li>
+                                <li>React and Node.js experience</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fab fa-php skill-icon"></i>
+                        <div class="skill-title">PHP</div>
+                        <div class="skill-desc">
+                            <ul style="padding-left:1.2em;margin:0;">
+                                <li>Server-side scripting for web applications</li>
+                                <li>Content management systems (WordPress, Laravel)</li>
+                                <li>RESTful API development</li>
+                                <li>Database integration (MySQL, PostgreSQL)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-gamepad skill-icon"></i>
+                        <div class="skill-title">Game Programming</div>
+                        <div class="skill-desc">
+                            <ul style="padding-left:1.2em;margin:0;">
+                                <li>Building interactive games and simulations</li>
+                                <li>Experience with Unity for 2D/3D game development</li>
+                                <li>Game logic, physics, and asset integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-mobile-alt skill-icon"></i>
+                        <div class="skill-title">Mobile Application Development</div>
+                        <div class="skill-desc">
+                            <ul style="padding-left:1.2em;margin:0;">
+                                <li>Designing and building mobile apps for Android/iOS</li>
+                                <li>User-centric UI/UX and responsive layouts</li>
+                                <li>Integration with APIs and device features</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-chart-bar skill-icon"></i>
+                        <div class="skill-title">Analytics (Power BI)</div>
+                        <div class="skill-desc">
+                            <ul style="padding-left:1.2em;margin:0;">
+                                <li>Data analysis and visualization with Power BI</li>
+                                <li>ETL (Extract, Transform, Load) processes</li>
+                                <li>Turning data into actionable business decisions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Add more skill cards as needed -->
+                </div>
+            </div>
+            <!-- Certificates Container (hidden by default) -->
+            <div class="certs-list" id="certs-container" style="display:none;">
+                <div class="cert-badge enhanced-badge">
+                    <div class="cert-badge-header">
+                        <img src="https://img.icons8.com/fluency/48/combo-chart.png" alt="Data Analytics Icon" class="cert-icon"/>
+                        <span class="cert-category analytics" style="background:linear-gradient(90deg,#4fc3f7,#1976d2);box-shadow:0 2px 8px #4fc3f755;">📊 Analytics</span>
+                        <a href="#" class="cert-download" title="Download certificate"><i class="fas fa-download"></i></a>
+                    </div>
+                    <div class="cert-badge-body">
+                        <h3 style="font-weight:800;letter-spacing:0.01em;">Certificate in Introduction to Data Analytics</h3>
+                        <a href="#" class="cert-issuer">Simplilearn</a>
+                        <div class="cert-date">February 27, 2025</div>
+                        <div class="cert-desc">Dove deep into the world of data! 🧠 Transformed raw numbers into actionable insights using cutting-edge tools and real-world datasets. Ready to turn chaos into clarity!</div>
+                    </div>
+                    <div class="cert-badge-footer">
+                        <i class="fas fa-file-alt"></i> <a href="{{ url_for('static', filename='certificates/Introduction-to-Data-Analytics.pdf') }}" target="_blank" style="color:#4fc3f7;text-decoration:underline;font-weight:600;">View Certificate</a>
+                    </div>
+                    <div class="badge-watermark" style="background:url('https://img.icons8.com/fluency/96/combo-chart.png') no-repeat right bottom/60px auto;opacity:0.08;position:absolute;bottom:10px;right:10px;width:60px;height:60px;pointer-events:none;"></div>
+                </div>
+                <div class="cert-badge enhanced-badge">
+                    <div class="cert-badge-header">
+                        <img src="https://img.icons8.com/fluency/48/hacker.png" alt="Ethical Hacking Icon" class="cert-icon"/>
+                        <span class="cert-category cybersecurity" style="background:linear-gradient(90deg,#ba68c8,#512da8);box-shadow:0 2px 8px #ba68c855;">🛡️ Cybersecurity</span>
+                        <a href="#" class="cert-download" title="Download certificate"><i class="fas fa-download"></i></a>
+                    </div>
+                    <div class="cert-badge-body">
+                        <h3 style="font-weight:800;letter-spacing:0.01em;">Certificate in Ethical Hacking</h3>
+                        <a href="#" class="cert-issuer">Cisco Networking Academy</a>
+                        <div class="cert-date">14 May 2024</div>
+                        <div class="cert-desc">Unlocked the secrets of the digital underworld! 🕵️‍♂️ Mastered ethical hacking, penetration testing, and digital defense to keep the good guys safe and the bad guys out.</div>
+                    </div>
+                    <div class="cert-badge-footer">
+                        <i class="fas fa-file-alt"></i> <a href="{{ url_for('static', filename='certificates/Ethical-Hacker-Certificate.pdf') }}" target="_blank" style="color:#ba68c8;text-decoration:underline;font-weight:600;">View Certificate</a>
+                    </div>
+                    <div class="badge-watermark" style="background:url('https://img.icons8.com/fluency/96/hacker.png') no-repeat right bottom/60px auto;opacity:0.08;position:absolute;bottom:10px;right:10px;width:60px;height:60px;pointer-events:none;"></div>
+                </div>
+                <div class="cert-badge enhanced-badge">
+                    <div class="cert-badge-header">
+                        <img src="https://img.icons8.com/color/48/000000/business-intelligence.png" alt="Business Intelligence Icon" class="cert-icon"/>
+                        <span class="cert-category business" style="background:linear-gradient(90deg,#ffd54f,#ff9800);color:#23263a;box-shadow:0 2px 8px #ffd54f55;">📈 Business Intelligence</span>
+                        <a href="#" class="cert-download" title="Download certificate"><i class="fas fa-download"></i></a>
+                    </div>
+                    <div class="cert-badge-body">
+                        <h3 style="font-weight:800;letter-spacing:0.01em;">Business Intelligence Fundamentals Certificate</h3>
+                        <a href="#" class="cert-issuer">Simplilearn</a>
+                        <div class="cert-date">March 14, 2025</div>
+                        <div class="cert-desc">Turned data into gold! 💡 Explored BI, data warehousing, and reporting to empower smart business decisions and drive innovation.</div>
+                    </div>
+                    <div class="cert-badge-footer">
+                        <i class="fas fa-file-alt"></i> <a href="{{ url_for('static', filename='certificates/Business-Intelligence-Fundamentals.pdf') }}" target="_blank" style="color:#ff9800;text-decoration:underline;font-weight:600;">View Certificate</a>
+                    </div>
+                    <div class="badge-watermark" style="background:url('https://img.icons8.com/color/96/000000/business-intelligence.png') no-repeat right bottom/60px auto;opacity:0.08;position:absolute;bottom:10px;right:10px;width:60px;height:60px;pointer-events:none;"></div>
+                </div>
+                <div class="cert-badge enhanced-badge">
+                    <div class="cert-badge-header">
+                        <img src="https://img.icons8.com/fluency/48/cloud.png" alt="AWS Cloud Icon" class="cert-icon"/>
+                        <span class="cert-category aws" style="background:linear-gradient(90deg,#81c784,#388e3c);box-shadow:0 2px 8px #81c78455;">☁️ AWS</span>
+                        <a href="#" class="cert-download" title="Download certificate"><i class="fas fa-download"></i></a>
+                    </div>
+                    <div class="cert-badge-body">
+                        <h3 style="font-weight:800;letter-spacing:0.01em;">AWS Academy Graduate - AWS Academy Cloud Foundations</h3>
+                        <a href="#" class="cert-issuer">Amazon Web Services</a>
+                        <div class="cert-date">September 20, 2024</div>
+                        <div class="cert-desc">Built a rock-solid foundation in cloud computing! 🚀 Explored AWS services, security, and architecture to power the next generation of digital solutions.</div>
+                    </div>
+                    <div class="cert-badge-footer">
+                        <i class="fas fa-file-alt"></i> <a href="{{ url_for('static', filename='certificates/AWSAcademy-Cloud-Foundations.pdf') }}" target="_blank" style="color:#81c784;text-decoration:underline;font-weight:600;">View Certificate</a>
+                    </div>
+                    <div class="badge-watermark" style="background:url('https://img.icons8.com/fluency/96/cloud.png') no-repeat right bottom/60px auto;opacity:0.08;position:absolute;bottom:10px;right:10px;width:60px;height:60px;pointer-events:none;"></div>
+                </div>
+                <div class="cert-badge enhanced-badge">
+                    <div class="cert-badge-header">
+                        <img src="https://img.icons8.com/fluency/48/database.png" alt="AWS Data Engineering Icon" class="cert-icon"/>
+                        <span class="cert-category aws" style="background:linear-gradient(90deg,#ffb74d,#f57c00);color:#23263a;box-shadow:0 2px 8px #ffb74d55;">🗄️ AWS</span>
+                        <a href="#" class="cert-download" title="Download certificate"><i class="fas fa-download"></i></a>
+                    </div>
+                    <div class="cert-badge-body">
+                        <h3 style="font-weight:800;letter-spacing:0.01em;">AWS Academy Graduate - AWS Academy Data Engineering</h3>
+                        <a href="#" class="cert-issuer">Amazon Web Services</a>
+                        <div class="cert-date">November 29, 2024</div>
+                        <div class="cert-desc">Engineered data pipelines in the cloud! 🛠️ Mastered AWS data engineering services and best practices for scalable, high-performance solutions.</div>
+                    </div>
+                    <div class="cert-badge-footer">
+                        <i class="fas fa-file-alt"></i> <a href="{{ url_for('static', filename='certificates/AWSAcademy-Data-Engineering.pdf') }}" target="_blank" style="color:#ffb74d;text-decoration:underline;font-weight:600;">View Certificate</a>
+                    </div>
+                    <div class="badge-watermark" style="background:url('https://img.icons8.com/fluency/96/database.png') no-repeat right bottom/60px auto;opacity:0.08;position:absolute;bottom:10px;right:10px;width:60px;height:60px;pointer-events:none;"></div>
+                </div>
+            </div>
+            <script>
+                function showTab(tab) {
+                    var skillsBtn = document.getElementById('skills-tab');
+                    var certsBtn = document.getElementById('certs-tab');
+                    var skillsContainer = document.getElementById('skills-container');
+                    var certsContainer = document.getElementById('certs-container');
+                    if (tab === 'skills') {
+                        skillsBtn.classList.add('active');
+                        certsBtn.classList.remove('active');
+                        skillsContainer.style.display = '';
+                        certsContainer.style.display = 'none';
+                    } else {
+                        certsBtn.classList.add('active');
+                        skillsBtn.classList.remove('active');
+                        certsContainer.style.display = '';
+                        skillsContainer.style.display = 'none';
+                    }
+                }
+            </script>
+        </section>
+        <!-- Enhanced Programming Languages & Frameworks Section -->
+        <section class="languages-frameworks-section" style="margin-top:2.5rem;margin-bottom:2.5rem;">
+            <h2 style="text-align:center;font-size:2.1rem;font-weight:800;margin-bottom:0.7rem;">Programming Languages & Frameworks</h2>
+            <p style="text-align:center;color:#b0b3c6;font-size:1.15rem;margin-bottom:2.2rem;">Languages & frameworks I speak fluently (besides English and sarcasm)</p>
+            <div class="lang-fw-pill-row">
+                <span class="lang-pill pill-python"><i class="fab fa-python"></i> Python</span>
+                <span class="lang-pill pill-js"><i class="fab fa-js-square"></i> JavaScript</span>
+                <span class="lang-pill pill-ts"><i class="fab fa-js"></i> TypeScript</span>
+                <span class="lang-pill pill-php"><i class="fab fa-php"></i> PHP</span>
+                <span class="lang-pill pill-java"><i class="fab fa-java"></i> Java</span>
+                <span class="lang-pill pill-kotlin"><i class="fas fa-robot"></i> Kotlin</span>
+                <span class="lang-pill pill-cpp"><i class="fas fa-cog"></i> C++</span>
+                <span class="lang-pill pill-react"><i class="fab fa-react"></i> React</span>
+                <span class="lang-pill pill-flask"><i class="fas fa-fire"></i> Flask</span>
+                <span class="lang-pill pill-node"><i class="fab fa-node-js"></i> Node.js</span>
+                <span class="lang-pill pill-laravel"><i class="fab fa-laravel"></i> Laravel</span>
+            </div>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <p>Here are a few of the projects I've worked on recently. Each one reflects my passion for building secure and beautiful digital experiences.</p>
+            <div class="projects-list">
+                <div class="project-item">
+                    <h3>Hospital Appointment Scheduling System</h3>
+                    <p>An information system developed during my final undergraduate year to streamline hospital appointment bookings, manage patient records, and optimize scheduling for both patients and healthcare providers.<br><em>Because who doesn't love waiting in line at the hospital? Now you can do it digitally!</em></p>
+                    <p><strong>Tech Stack:</strong> PHP, MySQL, HTML, CSS, JavaScript</p>
+                </div>
+                <div class="project-item">
+                    <h3>Stopwatch Application</h3>
+                    <p>A simple and intuitive stopwatch app built using Kotlin, featuring start, stop, and reset functionalities for accurate time tracking.<br><em>For those moments when you need to time how long it takes to procrastinate.</em></p>
+                    <p><strong>Tech Stack:</strong> Kotlin, Android Studio</p>
+                </div>
+                <div class="project-item">
+                    <h3>Workout Mobile Application</h3>
+                    <p>A mobile app designed to help users plan, track, and analyze their workouts, offering personalized routines and progress monitoring.<br><em>Because if you didn't log your workout, did you even exercise?</em></p>
+                    <p><strong>Tech Stack:</strong> Java/Kotlin, Android Studio, Firebase</p>
+                </div>
+                <div class="project-item">
+                    <h3>Banking Dataset Analytics & Visualization</h3>
+                    <p>Performed end-to-end data analysis and visualization on a comprehensive banking dataset, applying descriptive, diagnostic, predictive, and prescriptive analytics to extract actionable insights.<br><em>Turning boring bank numbers into slightly less boring charts since... well, now.</em></p>
+                    <p><strong>Tech Stack:</strong> Power BI, Python (Pandas, Matplotlib), Excel</p>
+                </div>
+                <div class="project-item">
+                    <h3>3D Game Development with Unity</h3>
+                    <p>Created an engaging 3D game using Unity, focusing on interactive gameplay, realistic graphics, and immersive user experience.<br><em>Finally, a game where I can control the chaos—unlike real life!</em></p>
+                    <p><strong>Tech Stack:</strong> Unity, C#</p>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="contact-bg">
+                <h2 style="font-size:2.5rem;font-weight:800;text-align:center;margin-bottom:0.5rem;" class="scroll-animate">Let's Connect</h2>
+                <p style="text-align:center;font-size:1.25rem;margin-bottom:2.5rem;" class="scroll-animate">Slide into my professional DMs — I'm basically just waiting to build something incredible with you! ✨</p>
+                <div class="contact-grid">
+                    <!-- Contact Form Card -->
+                    <div class="contact-card contact-form-card lets-connect-animate-left scroll-animate">
+                        <h3 style="font-size:1.35rem;font-weight:800;margin-bottom:1.2rem;display:flex;align-items:center;gap:0.7rem;background:rgba(91,107,255,0.10);padding:0.7rem 1.2rem;border-radius:1.1rem 1.1rem 1.1rem 0.4rem;border-left:5px solid #7f53ff;color:#fff;box-shadow:0 2px 8px 0 rgba(91,107,255,0.08);">
+                            <span style="font-size:1.5em;">💌</span> Drop a Message
+                        </h3>
+                        <p style="margin-bottom:1.2rem;">Let's chat about projects, collabs, or just vibe about tech! No spam energy here bestie 🎉</p>
+                        <form class="contact-form" method="post" action="/contact">
+                            <label for="name">Your Name (or what the internet calls you) ✨</label>
+                            <input type="text" id="name" name="name" placeholder="Jane Doe or TechQueen2025" required>
+                            <label for="email">Your Email (promise not to spam bestie) 📧</label>
+                            <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+                            <label for="vibe">What's the vibe? 🤔</label>
+                            <select id="vibe" name="vibe" required>
+                                <option value="">Choose the energy...</option>
+                                <option value="project">Project Collab 🚀</option>
+                                <option value="question">Just a Question ❓</option>
+                                <option value="network">Networking 🤝</option>
+                                <option value="other">Other 🌈</option>
+                            </select>
+                            <label for="message">Your Message 📝</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Type your message here..." required></textarea>
+                            <button type="submit" class="contact-btn lets-connect-animate-pulse">Send Message</button>
+                        </form>
+                    </div>
+                    <!-- Direct Contact Info Card (always on the right) -->
+                    <div class="contact-card contact-info-card enhanced-contact-info smart-contact-card scroll-animate">
+                        <h3 class="contact-title">
+                            <span class="smart-contact-icon grid-icon-bg">
+                                <img src="{{ url_for('static', filename='assets/Direct-line.png') }}" alt="Direct Line Icon" style="width: 1.5em; height: 1.5em; vertical-align: middle;">
+                            </span>
+                            The Direct Line
+                        </h3>
+                        <ul class="smart-contact-list">
+                            <li>
+                                <div class="smart-contact-row">
+                                    <span class="smart-contact-icon" style="background:#5f4b8b;"><i class="fas fa-envelope"></i></span>
+                                    <div>
+                                        <div class="smart-contact-label">Email</div>
+                                        <div class="smart-contact-desc">For when you're feeling formal:</div>
+                                        <a href="#" class="smart-contact-value email">kelvinkasalu20@gmail.com</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="smart-contact-row">
+                                    <span class="smart-contact-icon" style="background:#274690;"><i class="fas fa-phone"></i></span>
+                                    <div>
+                                        <div class="smart-contact-label">Phone</div>
+                                        <div class="smart-contact-desc">Only if it's urgent (or you're offering a job):</div>
+                                        <a href="tel:+254740928101" class="smart-contact-value phone">+254 740 928 101</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="smart-contact-row">
+                                    <span class="smart-contact-icon" style="background:#1b5e20;"><i class="fas fa-map-marker-alt"></i></span>
+                                    <div>
+                                        <div class="smart-contact-label">Location</div>
+                                        <div class="smart-contact-desc">Currently vibing in:</div>
+                                        <span class="smart-contact-value location">Nairobi, Kenya <span style="font-size:1.1em;">🇰🇪</span></span>
+                                        <div class="smart-contact-note">(Specific coordinates on a need-to-know basis bestie! 👀)</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="fancy-contact-email-card">
+                        <span class="fancy-email-pill">
+                            <i class="fas fa-envelope"></i>
+                            kelvinkasalu20@gmail.com
+                        </span>
+                        <div class="fancy-contact-tagline">
+                            Always down for cool projects!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section class="footer-widgets">
+        <div class="footer-widgets-row">
+            <!-- Quick Facts -->
+            <div class="footer-widget quick-facts">
+                <h3><i class="fas fa-bolt"></i> Quick Facts About Me</h3>
+                <ul>
+                    <li><span class="fact-icon">🎓</span> Class of 2025 from Strathmore University</li>
+                    <li><span class="fact-icon">💻</span> Full-Stack Developer with cybersecurity superpowers</li>
+                    <li><span class="fact-icon">🌍</span> Based in Nairobi, building for the world</li>
+                    <li><span class="fact-icon">☕</span> Powered by coffee and good vibes</li>
+                    <li><span class="fact-icon">✨</span> Always learning, always creating</li>
+                </ul>
+            </div>
+            <!-- Quick Links -->
+            <div class="footer-widget quick-links">
+                <h3><i class="fas fa-link"></i> Quick Links</h3>
+                <ul>
+                    <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
+                    <li><a href="#skills"><i class="fas fa-bolt"></i> My Skills</a></li>
+                    <li><a href="#projects"><i class="fas fa-rocket"></i> Projects</a></li>
+                    <li><a href="#contact"><i class="fas fa-heart"></i> Contact</a></li>
+                    <li><a href="{{ url_for('static', filename='resume.pdf') }}" download><i class="fas fa-file-alt"></i> Resume</a></li>
+                </ul>
+            </div>
+            <!-- Let's Connect -->
+            <div class="footer-widget lets-connect">
+                <h3><i class="fas fa-globe"></i> Let's Connect</h3>
+                <div class="connect-buttons">
+                    <a href="https://github.com/yourusername" target="_blank" class="connect-btn"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank" class="connect-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://instagram.com/yourusername" target="_blank" class="connect-btn"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="#" class="connect-btn"><i class="fas fa-envelope"></i> Email</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+    // Scroll-triggered animation for Let's Connect section
+    function animateOnScroll() {
+      var elements = document.querySelectorAll('.scroll-animate');
+      var windowHeight = window.innerHeight;
+      elements.forEach(function(el) {
+        var position = el.getBoundingClientRect().top;
+        if (position < windowHeight - 80) {
+          el.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('DOMContentLoaded', animateOnScroll);
+    </script>
+</body>
+</html> 

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Kelvin Kasalu Makwani</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="{{ url_for('about') }}"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="{{ url_for('contact') }}" class="active"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <h1>Get in Touch</h1>
+            <div class="contact-container">
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h2>Email</h2>
+                    <p>Feel free to reach out to me via email</p>
+                    <a href="{{ url_for('contact_form') }}" class="contact-link">Send Message</a>
+                </div>
+
+                <div class="contact-card">
+                    <i class="fab fa-linkedin"></i>
+                    <h2>LinkedIn</h2>
+                    <p>Connect with me on LinkedIn</p>
+                    <a href="https://www.linkedin.com/in/kelvin-makwani-13b45b2a1/" target="_blank" class="contact-link">View Profile</a>
+                </div>
+
+                <div class="contact-card">
+                    <i class="fab fa-github"></i>
+                    <h2>GitHub</h2>
+                    <p>Check out my projects on GitHub</p>
+                    <a href="https://github.com/kelvikasalu" target="_blank" class="contact-link">View Profile</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Kelvin Kasalu Makwani. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="#"><i class="fas fa-file-alt"></i> Resume</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
