@@ -15,21 +15,25 @@ Animated background with floating elements
 Typewriter effect for that dramatic entrance
 Smooth scroll navigation
 Mobile-responsive design
+
 👨‍💻 About Me
 Personal story with personality (because we're humans, not robots!)
 Professional journey timeline
 Skills showcase with hover effects
 Work experience that actually matters
+
 ⚡ Skills & Certifications
 Interactive skill cards
 Progress indicators
 Certification gallery
 Hover animations that spark joy
+
 🔥 Projects Portfolio
 Project cards with detailed info
 Hover effects and smooth transitions
 GitHub integration
 Live demo links
+
 💌 Contact Section
 Functional contact form
 Social media integration
